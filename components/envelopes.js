@@ -585,6 +585,10 @@ function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, eve
       status: (action === 'sign') ? 'sent' : 'created',
       recipients: recipients,
       emailSubject: (action === 'sign') ? subjectEnding : (subjectPrefix + subjectEnding),
+      emailSettings: {
+        replyEmailAddressOverride: email,
+        replyEmailNameOverride: email
+      },
       documents: documents,
       customFields: {
         textCustomFields: customFields
